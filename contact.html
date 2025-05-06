@@ -17,7 +17,7 @@
   </header>
   <main>
     <section>
-      <form action="https://formsubmit.co/calbay.jullian@gmail.com" method="POST" class="contact-form">
+      <form id="contactForm" action="https://formsubmit.co/calbay.jullian@gmail.com" method="POST" class="contact-form">
         <!-- Prevent spam -->
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://yourusername.github.io/thankyou.html">
@@ -33,8 +33,28 @@
 
         <button type="submit">Send Message</button>
       </form>
+
+      <!-- Popup -->
+      <div id="popup" class="popup">
+        <p>✅ Message sent successfully!</p>
+        <button onclick="submitRealForm()">OK</button>
+      </div>
     </section>
   </main>
-  <footer>© 2025 Jullian Eliezer Calbay</footer>
+  <footer>© 2025 Your Name</footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop default submission
+      document.getElementById('popup').style.display = 'block';
+    });
+
+    function submitRealForm() {
+      document.getElementById('popup').style.display = 'none';
+      form.submit(); // Now do the real submit
+    }
+  </script>
 </body>
 </html>
