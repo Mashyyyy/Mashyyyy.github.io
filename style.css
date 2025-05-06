@@ -114,7 +114,16 @@ footer {
   background-color: #778DA9;
 }
 
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
 .splide__slide img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
+  border: 2px solid #778DA9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
