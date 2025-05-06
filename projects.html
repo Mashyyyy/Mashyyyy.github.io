@@ -16,34 +16,28 @@
     </nav>
   </header>
   <main>
-    <section>
-      <h2>Image Carousel</h2>
-      <div class="carousel">
-        <img src="resources/screenshot_01.png" class="active" />
-        <img src="resources/screenshot_02.png" />
-        <img src="resources/screenshot_03.png" />
-      </div>
-      <div class="carousel-buttons">
-        <button onclick="changeSlide(-1)">&#8592; Prev</button>
-        <button onclick="changeSlide(1)">Next &#8594;</button>
+    <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="resources/screenshot_01.png" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="resources/screenshot_02.png" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="resources/screenshot_03.png" alt="">
+          </li>
+        </ul>
       </div>
     </section>
   </main>
   <footer>© 2025 Jullian Eliezer Calbay</footer>
 
   <script>
-    const images = document.querySelectorAll(".carousel img");
-    let current = 0;
-
-    function showSlide(index) {
-      images[current].classList.remove("active");
-      current = (index + images.length) % images.length;
-      images[current].classList.add("active");
-    }
-
-    function changeSlide(step) {
-      showSlide(current + step);
-    }
+    document.addEventListener( 'DOMContentLoaded', function () {
+      new Splide( '#image-carousel' ).mount();
+    } );
   </script>
 </body>
 </html>

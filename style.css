@@ -113,3 +113,8 @@ footer {
 .back-button:hover {
   background-color: #778DA9;
 }
+
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
