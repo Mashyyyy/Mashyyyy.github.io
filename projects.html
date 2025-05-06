@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Image Carousel</h2>
+      <div class="carousel">
+        <img src="https://via.placeholder.com/600x300/1B263B/FFFFFF?text=Project+1" class="active" />
+        <img src="https://via.placeholder.com/600x300/415A77/FFFFFF?text=Project+2" />
+        <img src="https://via.placeholder.com/600x300/778DA9/FFFFFF?text=Project+3" />
+      </div>
+      <div class="carousel-buttons">
+        <button onclick="changeSlide(-1)">&#8592; Prev</button>
+        <button onclick="changeSlide(1)">Next &#8594;</button>
+      </div>
+    </section>
+  </main>
+  <footer>© 2025 Your Name</footer>
+
+  <script>
+    const images = document.querySelectorAll(".carousel img");
+    let current = 0;
+
+    function showSlide(index) {
+      images[current].classList.remove("active");
+      current = (index + images.length) % images.length;
+      images[current].classList.add("active");
+    }
+
+    function changeSlide(step) {
+      showSlide(current + step);
+    }
+  </script>
+</body>
+</html>
