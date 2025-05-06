@@ -17,10 +17,24 @@
   </header>
   <main>
     <section>
-      <p>Email me at: <strong>your@email.com</strong></p>
-      <p>Or reach me via <a href="https://twitter.com" target="_blank">Twitter</a>.</p>
+      <form action="https://formsubmit.co/calbay.jullian@gmail.com" method="POST" class="contact-form">
+        <!-- Prevent spam -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourusername.github.io/thankyou.html">
+
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="title">Subject</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
     </section>
   </main>
-  <footer>© 2025 Your Name</footer>
+  <footer>© 2025 Jullian Eliezer Calbay</footer>
 </body>
 </html>
