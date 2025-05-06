@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <title>Projects</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Splide CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+  />
 </head>
 <body>
   <header>
@@ -15,29 +21,39 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <main>
-    <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+    <section id="image-carousel" class="splide" aria-label="Project Screenshots">
       <div class="splide__track">
         <ul class="splide__list">
           <li class="splide__slide">
-            <img src="resources/screenshot_01.png" alt="">
+            <img src="resources/screenshot_01.png" alt="Screenshot 1" />
           </li>
           <li class="splide__slide">
-            <img src="resources/screenshot_02.png" alt="">
+            <img src="resources/screenshot_02.png" alt="Screenshot 2" />
           </li>
           <li class="splide__slide">
-            <img src="resources/screenshot_03.png" alt="">
+            <img src="resources/screenshot_03.png" alt="Screenshot 3" />
           </li>
         </ul>
       </div>
     </section>
   </main>
+
   <footer>© 2025 Jullian Eliezer Calbay</footer>
 
+  <!-- ✅ Splide JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script>
-    document.addEventListener( 'DOMContentLoaded', function () {
-      new Splide( '#image-carousel' ).mount();
-    } );
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#image-carousel', {
+        type: 'loop',
+        perPage: 1,
+        autoplay: true,
+        interval: 3000,
+        pauseOnHover: true,
+      }).mount();
+    });
   </script>
 </body>
 </html>
